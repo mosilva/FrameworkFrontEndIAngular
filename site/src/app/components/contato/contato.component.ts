@@ -1,3 +1,4 @@
+import { contactFormData } from './../../models/contact-form-data.models';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContatoComponent implements OnInit {
   public btnDisabled = true;
-  public formData = {
-    email: '',
-    message: '',
+
+  public formData: contactFormData = {
+    email: 'teste@teste.com.br',
+    message: 'Pattern',
   };
 
   ngOnInit(): void {
@@ -20,6 +22,7 @@ export class ContatoComponent implements OnInit {
 
   public submitForm(): void {
     console.log('Formulário enviado!');
+    console.log(this.formData);
   }
 
   public showInputData(event: any): void {

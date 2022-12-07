@@ -9,7 +9,7 @@
         class="form-control"
         id="exampleFormControlInput1"
         placeholder="name@example.com"
-        (change)="showInputData($event)"
+        [(ngModel)]="formData.email"
       />
     </div>
     <div class="mb-3">
@@ -20,7 +20,7 @@
         class="form-control"
         id="exampleFormControlTextarea1"
         rows="3"
-        [(ngModel)]=""
+        [(ngModel)]="formData.message"
       ></textarea>
     </div>
     <button

@@ -9,6 +9,7 @@ import { SobreComponent } from './components/sobre/sobre.component';
 import { EnderecoComponent } from './components/endereco/endereco.component';
 import { ContatoComponent } from './components/contato/contato.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,12 +20,10 @@ import { FooterComponent } from './components/footer/footer.component';
     SobreComponent,
     EnderecoComponent,
     ContatoComponent,
-    FooterComponent
+    FooterComponent,
   ],
-  imports: [
-    BrowserModule
-  ],
+  imports: [BrowserModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
