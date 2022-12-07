@@ -3,12 +3,14 @@
   <div class="container">
     <h1 class="text-center mb-4">Endereço</h1>
     <p>
-      {{ addressData.street }} , {{ addressData.number }} -
-      {{ addressData.complement }}
+      {{ addressDataReceive.data.street }} ,
+      {{ addressDataReceive.data.number }} -
+      {{ addressDataReceive.data.complement }}
     </p>
     <p>
-      {{ addressData.district }} , {{ addressData.city }} -
-      {{ addressData.state }}, {{ addressData.zipCode }}
+      {{ addressDataReceive.data.district }} ,
+      {{ addressDataReceive.data.city }} - {{ addressDataReceive.data.state }},
+      {{ addressDataReceive.data.zipCode }}
     </p>
   </div>
 </section>

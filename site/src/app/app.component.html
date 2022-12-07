@@ -1,16 +1,12 @@
-
 <app-header></app-header>
-    <!-- Main -->
-    <main id="main">
-
-<app-carousel></app-carousel>
-<app-destaque></app-destaque>
-<app-sobre></app-sobre>
-<app-endereco></app-endereco>
-<app-contato></app-contato>
-
-    </main>
-    <!-- End Main -->
+<!-- Main -->
+<main id="main">
+  <app-carousel></app-carousel>
+  <app-destaque></app-destaque>
+  <app-sobre [aboutData]="data.about"></app-sobre>
+  <app-endereco [addressDataReceive]="data.address"></app-endereco>
+  <app-contato></app-contato>
+</main>
+<!-- End Main -->
 
 <app-footer></app-footer>
-

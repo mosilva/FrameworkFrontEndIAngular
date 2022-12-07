@@ -49,11 +49,11 @@ export class AppComponent {
     },
   };
 
-  onElementCreated(element: string): void {
-    console.log('Elemento criado:', element);
-  }
+  // onElementCreated(element: string): void {
+  //   console.log('Elemento criado:', element);
+  // }
 
-  onContactFormSubmitted(formData: ContactFormData): void {
-    console.log('Formulário enviado com sucesso!', formData);
-  }
+  // onContactFormSubmitted(formData: ContactFormData): void {
+  //   console.log('Formulário enviado com sucesso!', formData);
+  // }
 }

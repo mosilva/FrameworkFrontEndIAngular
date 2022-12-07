@@ -1,5 +1,5 @@
-import { addressData } from './../../models/address-data.model';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { AddressSectionData } from 'src/app/models/address-section-data.model';
 
 @Component({
   selector: 'app-endereco',
@@ -7,13 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./endereco.component.css'],
 })
 export class EnderecoComponent {
-  public addressData: addressData = {
-    street: 'Rua Luiz Galvez',
-    number: 254,
-    complement: '3º floor living room 386',
-    state: 'AC',
-    city: 'White river',
-    district: 'group White Castle',
-    zipCode: '69911-262',
-  };
+  @Input() public addressDataReceive!: AddressSectionData;
+
+  // public addressData: addressData = {
+  //   street: 'Rua Luiz Galvez',
+  //   number: 254,
+  //   complement: '3º floor living room 386',
+  //   state: 'AC',
+  //   city: 'White river',
+  //   district: 'group White Castle',
+  //   zipCode: '69911-262',
+  // };
 }
