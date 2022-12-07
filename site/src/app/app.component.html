@@ -2,7 +2,7 @@
 <!-- Main -->
 <main id="main">
   <app-carousel></app-carousel>
-  <app-destaque></app-destaque>
+  <app-destaque [featuresDataReceive]="data.features"></app-destaque>
   <app-sobre [aboutData]="data.about"></app-sobre>
   <app-endereco [addressDataReceive]="data.address"></app-endereco>
   <app-contato></app-contato>
