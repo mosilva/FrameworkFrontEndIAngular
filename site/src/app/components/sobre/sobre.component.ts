@@ -1,5 +1,5 @@
 import { AboutSectionData } from './../../models/about-section-data.model';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-sobre',
@@ -8,6 +8,12 @@ import { Component, Input } from '@angular/core';
 })
 export class SobreComponent {
   @Input() public aboutData!: AboutSectionData;
+  @Output() public elementCreated: EventEmitter<string> =
+    new EventEmitter<string>();
+
+  ngOnInit() {
+    this.elementCreated.emit('about');
+  }
 
   // private companyName: string = `HexaVem Ltda.`;
 

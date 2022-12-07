@@ -1,5 +1,6 @@
 import { AppData } from './models/app-data.model';
 import { Component } from '@angular/core';
+import { ContactFormData } from './models/contact-form-data.models';
 
 @Component({
   selector: 'app-root',
@@ -49,11 +50,23 @@ export class AppComponent {
     },
   };
 
-  // onElementCreated(element: string): void {
-  //   console.log('Elemento criado:', element);
-  // }
+  onElementCreated(element: string): void {
+    console.log('Elemento criado:', element);
+  }
 
-  // onContactFormSubmitted(formData: ContactFormData): void {
-  //   console.log('Formulário enviado com sucesso!', formData);
-  // }
+  onContactFormSubmitted(formData: ContactFormData): void {
+    console.log('Formulário enviado com sucesso!', formData);
+  }
+
+  onFeaturesCreated(element: string): void {
+    console.log('Elemento criado:', element);
+  }
+
+  onAdressCreated(element: string): void {
+    console.log('Elemento criado:', element);
+  }
+
+  onEventSearch(element: string): void {
+    console.log('Pesquisa:', element);
+  }
 }

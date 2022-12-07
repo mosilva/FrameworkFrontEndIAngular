@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { AddressSectionData } from 'src/app/models/address-section-data.model';
 
 @Component({
@@ -8,6 +8,12 @@ import { AddressSectionData } from 'src/app/models/address-section-data.model';
 })
 export class EnderecoComponent {
   @Input() public addressDataReceive!: AddressSectionData;
+  @Output() public addressCreated: EventEmitter<string> =
+    new EventEmitter<string>();
+
+  ngOnInit() {
+    this.addressCreated.emit('address');
+  }
 
   // public addressData: addressData = {
   //   street: 'Rua Luiz Galvez',

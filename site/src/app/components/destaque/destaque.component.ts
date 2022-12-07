@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { FeraturesSectionsData } from 'src/app/models/features-section-data.model';
 
 @Component({
@@ -8,4 +8,10 @@ import { FeraturesSectionsData } from 'src/app/models/features-section-data.mode
 })
 export class DestaqueComponent {
   @Input() public featuresDataReceive!: FeraturesSectionsData;
+  @Output() public sendFeatures: EventEmitter<string> =
+    new EventEmitter<string>();
+
+  ngOnInit() {
+    this.sendFeatures.emit('features');
+  }
 }

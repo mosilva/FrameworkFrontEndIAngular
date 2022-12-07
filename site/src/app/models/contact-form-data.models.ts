@@ -1,4 +1,4 @@
-export interface contactFormData {
+export interface ContactFormData {
   email: string;
   message: string;
 }

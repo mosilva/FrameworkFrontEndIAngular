@@ -1,5 +1,5 @@
-import { contactFormData } from './../../models/contact-form-data.models';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { ContactFormData } from 'src/app/models/contact-form-data.models';
 
 @Component({
   selector: 'app-contato',
@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contato.component.css'],
 })
 export class ContatoComponent implements OnInit {
+  @Output() public sendForm: EventEmitter<ContactFormData> =
+    new EventEmitter<ContactFormData>();
+
   public btnDisabled = true;
 
-  public formData: contactFormData = {
+  public formData: ContactFormData = {
     email: 'teste@teste.com.br',
     message: 'Pattern',
   };
@@ -22,7 +25,8 @@ export class ContatoComponent implements OnInit {
 
   public submitForm(): void {
     console.log('Formulário enviado!');
-    console.log(this.formData);
+    // console.log(this.formData);
+    this.sendForm.emit(this.formData);
   }
 
   public showInputData(event: any): void {

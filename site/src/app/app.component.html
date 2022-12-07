@@ -1,11 +1,20 @@
-<app-header></app-header>
+<app-header (sendSearch)="onEventSearch($event)"></app-header>
 <!-- Main -->
 <main id="main">
   <app-carousel></app-carousel>
-  <app-destaque [featuresDataReceive]="data.features"></app-destaque>
-  <app-sobre [aboutData]="data.about"></app-sobre>
-  <app-endereco [addressDataReceive]="data.address"></app-endereco>
-  <app-contato></app-contato>
+  <app-destaque
+    [featuresDataReceive]="data.features"
+    (sendFeatures)="onFeaturesCreated($event)"
+  ></app-destaque>
+  <app-sobre
+    [aboutData]="data.about"
+    (elementCreated)="onElementCreated($event)"
+  ></app-sobre>
+  <app-endereco
+    [addressDataReceive]="data.address"
+    (addressCreated)="onAdressCreated($event)"
+  ></app-endereco>
+  <app-contato (sendForm)="onContactFormSubmitted($event)"></app-contato>
 </main>
 <!-- End Main -->
 
