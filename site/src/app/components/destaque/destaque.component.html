@@ -3,7 +3,10 @@
   <div class="container">
     <h1 class="text-center mb-4">{{ featuresDataReceive.sectionTitle }}</h1>
     <div class="row">
-      <div class="col features text-center">
+      <div
+        class="col features text-center"
+        *ngIf="featuresDataReceive.feature1.isActive"
+      >
         <img
           src="./assets/images/{{ featuresDataReceive.feature1.image }}"
           alt=""
@@ -15,7 +18,10 @@
           </p>
         </div>
       </div>
-      <div class="col features text-center">
+      <div
+        class="col features text-center"
+        *ngIf="featuresDataReceive.feature2.isActive"
+      >
         <img
           src="./assets/images/{{ featuresDataReceive.feature2.image }}"
           alt=""
@@ -27,7 +33,10 @@
           </p>
         </div>
       </div>
-      <div class="col features text-center">
+      <div
+        class="col features text-center"
+        *ngIf="featuresDataReceive.feature3.isActive"
+      >
         <img
           src="./assets/images/{{ featuresDataReceive.feature3.image }}"
           alt=""
@@ -39,7 +48,10 @@
           </p>
         </div>
       </div>
-      <div class="col features text-center">
+      <div
+        class="col features text-center"
+        *ngIf="featuresDataReceive.feature4.isActive"
+      >
         <img
           src="./assets/images/{{ featuresDataReceive.feature4.image }}"
           alt=""
