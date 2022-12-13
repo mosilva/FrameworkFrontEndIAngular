@@ -1,4 +1,7 @@
-<app-header (sendSearch)="onEventSearch($event)"></app-header>
+<app-header
+  [headerData]="data.header"
+  (sendSearch)="onEventSearch($event)"
+></app-header>
 <!-- Main -->
 <main id="main">
   <app-carousel></app-carousel>

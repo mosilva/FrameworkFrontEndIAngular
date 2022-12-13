@@ -2,34 +2,187 @@
 <section id="contact" class="my-5">
   <div class="container">
     <h1 class="text-center mb-4">Contato</h1>
-    <div class="mb-3">
-      <label for="exampleFormControlInput1" class="form-label">Email</label>
-      <input
-        type="email"
-        class="form-control"
-        id="exampleFormControlInput1"
-        placeholder="name@example.com"
-        [(ngModel)]="formData.email"
-      />
-    </div>
-    <div class="mb-3">
-      <label for="exampleFormControlTextarea1" class="form-label"
-        >Mensagem</label
-      >
-      <textarea
-        class="form-control"
-        id="exampleFormControlTextarea1"
-        rows="3"
-        [(ngModel)]="formData.message"
-      ></textarea>
-    </div>
-    <button
-      class="btn btn-primary"
-      [disabled]="btnDisabled"
-      (click)="submitForm()"
-    >
-      Enviar
-    </button>
+
+    <form [formGroup]="form">
+      <div class="row">
+        <div class="col-6">
+          <label for="exampleFormControlInput1" class="form-label">Nome</label>
+          <input
+            type="text"
+            class="form-control"
+            id="exampleFormControlInput1"
+            placeholder="Por exemplo, José Antônio Almeida Pacheco"
+            formControlName="name"
+          />
+        </div>
+
+        <div class="col-3">
+          <label for="exampleFormControlInput1" class="form-label">CPF</label>
+          <input
+            type="text"
+            class="form-control"
+            id="exampleFormControlInput1"
+            placeholder="Por exemplo, 123.456.789-10"
+            formControlName="cpf"
+          />
+        </div>
+      </div>
+      <div formGroupName="address">
+        <div class="row">
+          <div class="col-2">
+            <label for="exampleFormControlInput1" class="form-label">CEP</label>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="Por exemplo, 123456-78"
+              formControlName="zipcode"
+            />
+          </div>
+          <div class="col-4">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Logradouro</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="Por exemplo, Av. Brasil"
+              formControlName="street"
+            />
+          </div>
+          <div class="col-2">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Number</label
+            >
+            <input
+              type="number"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="Por exemplo, 14"
+              formControlName="number"
+            />
+          </div>
+          <div class="col-4">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Complemento</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="Por exemplo, Bloco 2 - Apt 505"
+              formControlName="complement"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Bairro</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="Por exemplo, Laranjeiras"
+              formControlName="neighborhood"
+            />
+          </div>
+          <div class="col">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Cidade</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="Por exemplo, Rio de Janeiro"
+              formControlName="city"
+            />
+          </div>
+
+          <div class="col">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Estado</label
+            >
+            <select class="form-select" formControlName="state">
+              <option *ngFor="let state of states" [value]="state.initials">
+                {{ state.name }}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div formGroupName="contact">
+        <div class="row">
+          <div class="col-2">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Telefone</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="(11) 99114-7457"
+              formControlName="phone"
+            />
+          </div>
+
+          <div class="col-3">
+            <label for="exampleFormControlInput1" class="form-label"
+              >E-mail</label
+            >
+            <input
+              type="email"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="Por exemplo, jose@gmail.com"
+              formControlName="email"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <label for="exampleFormControlInput1" class="form-label"
+            >Username</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="exampleFormControlInput1"
+            placeholder="Por exemplo, JoAlmeida"
+            formControlName="userName"
+          />
+        </div>
+
+        <div class="col-4">
+          <label for="exampleFormControlInput1" class="form-label">Senha</label>
+          <input
+            type="password"
+            class="form-control"
+            id="exampleFormControlInput1"
+            placeholder="Contenha dígito, letra e caracter especial"
+            formControlName="password"
+          />
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label"
+          >Mensagem</label
+        >
+        <textarea
+          class="form-control"
+          id="exampleFormControlTextarea1"
+          rows="3"
+          formControlName="message"
+        ></textarea>
+      </div>
+      <button class="btn btn-primary" (click)="submitForm()">Enviar</button>
+    </form>
   </div>
 </section>
 <!-- End Contact -->

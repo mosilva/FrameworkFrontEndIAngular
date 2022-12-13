@@ -21,7 +21,7 @@ export class EnderecoComponent {
   //   complement: '3º floor living room 386',
   //   state: 'AC',
   //   city: 'White river',
-  //   district: 'group White Castle',
+  //   neighborhood: 'group White Castle',
   //   zipCode: '69911-262',
   // };
 }

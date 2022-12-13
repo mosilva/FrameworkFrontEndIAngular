@@ -4,6 +4,6 @@ export interface addressData {
   complement: string;
   state: string;
   city: string;
-  district: string;
+  neighborhood: string;
   zipCode: string;
 }

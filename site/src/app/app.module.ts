@@ -9,7 +9,7 @@ import { SobreComponent } from './components/sobre/sobre.component';
 import { EnderecoComponent } from './components/endereco/endereco.component';
 import { ContatoComponent } from './components/contato/contato.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,7 @@ import { FormsModule } from '@angular/forms';
     ContatoComponent,
     FooterComponent,
   ],
-  imports: [BrowserModule, FormsModule],
+  imports: [BrowserModule, FormsModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

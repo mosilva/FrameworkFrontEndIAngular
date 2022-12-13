@@ -30,6 +30,17 @@
           <a class="nav-link" href="#contact">Contato</a>
         </li>
       </ul>
+      <div class="ms-3">
+        <ng-container [ngSwitch]="headerData.profile">
+          <div *ngSwitchCase="profileEnum.ADMIN">Hello, admin</div>
+          <div *ngSwitchCase="profileEnum.EDITOR">Hello, editor</div>
+          <div *ngSwitchCase="profileEnum.USER">Hello, user</div>
+          <div *ngSwitchCase="profileEnum.EMPLOYEE">Hello, employee</div>
+          <div *ngSwitchCase="profileEnum.VIEWER">Hello, viewer</div>
+          <div *ngSwitchDefault>User not identifield</div>
+        </ng-container>
+      </div>
+
       <form class="d-flex">
         <input
           class="form-control me-2"
